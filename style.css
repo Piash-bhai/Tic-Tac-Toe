@@ -36,6 +36,35 @@ body::before {
   z-index: 0;
 }
 
+
+
+.piash {
+    color: #fff;
+    text-shadow:
+       #fff 0px 0px 20px,
+       #fff 0px 0px 18px;
+       
+  
+}
+
+.piash1 {
+    color: #00f0ff;
+    text-shadow:
+         #00f0ff 0px 0px 20px,
+       #00f0ff 0px 0px 18px;
+       
+}
+
+.piash2 {
+    color: #ff3cac;
+    text-shadow:
+        #ff3cac 0px 0px 20px,
+       #ff3cac 0px 0px 18px;
+
+     
+}
+
+
 .wrapper {
   position: relative;
   z-index: 1;
