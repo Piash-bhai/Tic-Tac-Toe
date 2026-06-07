@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrapper">
+
+  <div class="scores">
+    <div class="score-card x-card">
+      <div class="label">Player X</div>
+      <div class="num" id="score-x">0</div>
+    </div>
+    <div class="score-div">VS</div>
+    <div class="score-card o-card">
+      <div class="label">Player O</div>
+      <div class="num" id="score-o">0</div>
+    </div>
+    <div class="score-div">·</div>
+    <div class="score-card draw-card">
+      <div class="label">Draws</div>
+      <div class="num" id="score-d">0</div>
+    </div>
+  </div>
+
+  <div class="title-block">
+    <h1><span>TIC</span> · TAC · <span>TOE</span></h1>
+    <p class="subtitle">2 Player · Classic Mode</p>
+  </div>
+
+  <div class="turn-display">
+    <div class="dot" id="turn-dot"></div>
+    <span class="label">Turn:</span>
+    <span class="player-name" id="turn-label">X</span>
+  </div>
+
+  <div class="board">
+    <div onclick="handleclick(this)" id="0" class="cell"></div>
+    <div onclick="handleclick(this)" id="1" class="cell"></div>
+    <div onclick="handleclick(this)" id="2" class="cell"></div>
+    <div onclick="handleclick(this)" id="3" class="cell"></div>
+    <div onclick="handleclick(this)" id="4" class="cell"></div>
+    <div onclick="handleclick(this)" id="5" class="cell"></div>
+    <div onclick="handleclick(this)" id="6" class="cell"></div>
+    <div onclick="handleclick(this)" id="7" class="cell"></div>
+    <div onclick="handleclick(this)" id="8" class="cell"></div>
+  </div>
+
+  <button class="reset-btn" onclick="resetBoard()">↺ &nbsp; Reset Board</button>
+
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="result-card">
+    <span class="result-emoji" id="result-emoji">🏆</span>
+    <div class="result-title" id="result-title">Winner</div>
+    <div class="result-name" id="result-name">X</div>
+    <button class="play-again-btn" onclick="resetBoard()">Play Again</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
