@@ -20,7 +20,8 @@ body {
   align-items: center;
   justify-content: center;
   font-family: 'Rajdhani', sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   position: relative;
 }
 
@@ -34,6 +35,15 @@ body::before {
   background-size: 40px 40px;
   pointer-events: none;
   z-index: 0;
+}
+
+.okk {
+  font-family: 'Orbitron', monospace;
+  font-size: clamp(0.65rem, 3vw, 1rem);
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
 }
 
 .piash {
