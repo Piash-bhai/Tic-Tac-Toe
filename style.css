@@ -36,34 +36,26 @@ body::before {
   z-index: 0;
 }
 
-
-
 .piash {
-    color: #fff;
-    text-shadow:
-       #fff 0px 0px 20px,
-       #fff 0px 0px 18px;
-       
-  
+  color: #fff;
+  text-shadow:
+     #fff 0px 0px 20px,
+     #fff 0px 0px 18px;
 }
 
 .piash1 {
-    color: #00f0ff;
-    text-shadow:
-         #00f0ff 0px 0px 20px,
-       #00f0ff 0px 0px 18px;
-       
+  color: #00f0ff;
+  text-shadow:
+       #00f0ff 0px 0px 20px,
+     #00f0ff 0px 0px 18px;
 }
 
 .piash2 {
-    color: #ff3cac;
-    text-shadow:
-        #ff3cac 0px 0px 20px,
-       #ff3cac 0px 0px 18px;
-
-     
+  color: #ff3cac;
+  text-shadow:
+      #ff3cac 0px 0px 20px,
+     #ff3cac 0px 0px 18px;
 }
-
 
 .wrapper {
   position: relative;
@@ -71,14 +63,15 @@ body::before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 28px;
+  gap: clamp(16px, 4vw, 28px);
+  padding: 1rem;
 }
 
 .title-block { text-align: center; }
 
 .title-block h1 {
   font-family: 'Orbitron', monospace;
-  font-size: 2.2rem;
+  font-size: clamp(1.3rem, 5vw, 2.2rem);
   font-weight: 900;
   letter-spacing: 0.08em;
   color: #fff;
@@ -103,8 +96,8 @@ body::before {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 50px;
-  padding: 8px 22px;
-  font-size: 1rem;
+  padding: 7px clamp(12px, 4vw, 22px);
+  font-size: clamp(0.78rem, 3vw, 1rem);
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -131,8 +124,8 @@ body::before {
 .board {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  padding: 18px;
+  gap: clamp(6px, 2vw, 10px);
+  padding: clamp(10px, 3vw, 18px);
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 18px;
@@ -150,8 +143,8 @@ body::before {
 }
 
 .cell {
-  width: 110px;
-  height: 110px;
+  width: clamp(72px, 26vw, 110px);
+  height: clamp(72px, 26vw, 110px);
   background: var(--cell-bg);
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -160,7 +153,7 @@ body::before {
   align-items: center;
   justify-content: center;
   font-family: 'Orbitron', monospace;
-  font-size: 2.6rem;
+  font-size: clamp(1.6rem, 6vw, 2.6rem);
   font-weight: 900;
   transition: background 0.2s, transform 0.15s;
   position: relative;
@@ -221,7 +214,13 @@ body::before {
   box-shadow: 0 0 12px rgba(0,240,255,0.15);
 }
 
-.scores { display: flex; gap: 10px; align-items: center; }
+.scores {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 .score-card {
   text-align: center;
@@ -263,7 +262,8 @@ body::before {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 24px;
-  padding: 40px 52px;
+  padding: clamp(24px, 6vw, 40px) clamp(20px, 7vw, 52px);
+  width: min(90vw, 480px);
   text-align: center;
   position: relative;
   animation: rise 0.3s cubic-bezier(0.22, 1, 0.36, 1);
@@ -285,7 +285,7 @@ body::before {
 
 .result-emoji { font-size: 3rem; margin-bottom: 14px; display: block; }
 .result-title { font-family: 'Orbitron', monospace; font-size: 1rem; letter-spacing: 0.3em; text-transform: uppercase; color: #555; margin-bottom: 8px; }
-.result-name { font-family: 'Orbitron', monospace; font-size: 2.8rem; font-weight: 900; margin-bottom: 28px; }
+.result-name { font-family: 'Orbitron', monospace; font-size: clamp(1.6rem, 7vw, 2.8rem); font-weight: 900; margin-bottom: 28px; }
 .result-name.x-win { color: var(--x-color); text-shadow: var(--glow-x); }
 .result-name.o-win { color: var(--o-color); text-shadow: var(--glow-o); }
 .result-name.draw  { color: #888; }
@@ -306,9 +306,3 @@ body::before {
 }
 
 .play-again-btn:hover { transform: scale(1.04); box-shadow: 0 0 24px rgba(0,240,255,0.4); }
-
-@media (max-width: 480px) {
-  .cell { width: 88px; height: 88px; font-size: 2rem; }
-  .title-block h1 { font-size: 1.5rem; }
-  .result-name { font-size: 2rem; }
-}
